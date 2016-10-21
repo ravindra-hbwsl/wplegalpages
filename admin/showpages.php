@@ -1,7 +1,6 @@
 <?php
 
 if ( ! defined( 'ABSPATH' ) ) exit;
-require_once( plugins_url().'/WP-Legal-Pages/legalPages.php' );
 
 global $wpdb;
 $lpObj = new legalPages();
