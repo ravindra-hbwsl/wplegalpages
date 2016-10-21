@@ -34,25 +34,27 @@ if ( !class_exists('legalPages') ) :
 		function admin_css() {
 		  if (isset($_GET['page'])) {
             if ($_GET['page'] == "lp-create" ||$_GET['page'] == "legal-pages") {
-               wp_enqueue_style('legalpagecss',WP_PLUGIN_URL."/wplegalpages/style.css" );
+               wp_enqueue_style('legalpagecss',WP_PLUGIN_URL."/WP-Legal-Pages/style.css" );
                wp_enqueue_style('legalpagecss');
              }
 		  }
 		}
 
 		function createPage()
-		{
-			include_once('createPage.php');
+		{       require_once( 'legalPages.php' );
+			include_once('admin/createPage.php');
 		}
 
 	    function showpages()
 		{
-			include_once('showpages.php');
+                        require_once( 'legalPages.php' );
+			include_once('admin/showpages.php');
 		}
 
 		function adminSetting()
 		{
-			include_once("adminSetting.php");
+                        require_once( 'legalPages.php' );
+			include_once("admin/adminSetting.php");
 		}
 
 		function deactivate()
@@ -139,10 +141,10 @@ if ( !class_exists('legalPages') ) :
 			add_action('tiny_mce_preload_dialogs', 'wp_link_dialog');
 
 			//self bootstrap style sheet
-			wp_enqueue_style('bootstrap-min',$this->plugin_url. '/wp-content/plugins/wplegalpages/css/bootstrap.min.css');
+			wp_enqueue_style('bootstrap-min',$this->plugin_url. '/wp-content/plugins/WP-Legal-Pages/admin/css/bootstrap.min.css');
 
 			//self style sheet
-			wp_enqueue_style('style',$this->plugin_url. '/wp-content/plugins/wplegalpages/css/style.css');
+			wp_enqueue_style('style',$this->plugin_url. '/wp-content/plugins/WP-Legal-Pages/admin/css/style.css');
 
 			add_thickbox();
 

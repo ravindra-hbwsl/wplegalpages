@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-require_once( 'legalPages.php' );
+
 $lpObj = new legalPages();
 $lpObj->lp_enqueue_editor();
 $baseurl=esc_url(get_bloginfo('url'));
@@ -14,7 +14,7 @@ $privacy=__('<h2>Privacy Policy</h2><p>Welcome to [Domain] (the "Site").We under
 	<h1>WP Legal Pages</h1>
 	<div style="line-height: 2.4em;">
 	<a href="https://club.wpeka.com/product/wplegalpages/" target="_blank">
-	<img src="<?php echo WP_PLUGIN_URL.'/wplegalpages/image.jpg'; ?>">
+	<img src="<?php echo WP_PLUGIN_URL.'/WP-Legal-Pages/image.jpg'; ?>">
 	</a>
 	</div>
 </div>

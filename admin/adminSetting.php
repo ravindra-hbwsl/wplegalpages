@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-require_once( 'legalPages.php' );
+
 $lpObj = new legalPages();
 $lpObj->lp_enqueue_editor();
 $baseurl = $_SERVER['PHP_SELF'];
@@ -13,7 +13,7 @@ if(isset($_POST['lp_submit']) && $_POST['lp_submit']=='Accept'){
 <div style="width:1000px;float:left;">
 	<div style="line-height: 2.4em;">
 	<a href="https://club.wpeka.com/product/wplegalpages/" target="_blank">
-	<img src="<?php echo WP_PLUGIN_URL.'/wplegalpages/image.jpg'; ?>">
+	<img src="<?php echo WP_PLUGIN_URL.'/WP-Legal-Pages/image.jpg'; ?>">
 	</a>
 	</div>
 	<h1>WP Legal Pages</h1>
