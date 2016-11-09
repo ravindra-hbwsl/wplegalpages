@@ -1,3 +1,7 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
 .clear{
 	clear:both;
 }
@@ -84,4 +88,33 @@ text-decoration:none;
     text-align: center;
     border-radius: 3px;
     font-weight: bold;
+}
+
+.mybtn{
+padding-bottom:30px !important;
+border:1px solid grey !important;
+color:white !important;
+}
+
+.myText{
+width:760px !important;
+}
+
+.myLink{
+text-decoration:none !important;
+}
+
+.myLabel{
+color:#337ab7 !important;
+font-size:14px !important;
+}
+
+.myLabel-head{
+color:#0073aa !important;
+font-size:22px !important;
+}
+
+.myAlert{
+font-size:12px !important;
+padding:5px !important;
 }

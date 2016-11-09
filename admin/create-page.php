@@ -1,9 +1,10 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
-
-$lpObj = new legalPages();
-$lpObj->lp_enqueue_editor();
+$lpObj = new WP_Legal_Pages();
+//$lpObj->lp_enqueue_editor();
 $baseurl=esc_url(get_bloginfo('url'));
 $page = isset($_REQUEST['page'])?sanitize_text_field($_REQUEST['page']):'';
 $lptype = isset($_REQUEST['lp-type'])?sanitize_text_field($_REQUEST['lp-type']):'';
@@ -14,7 +15,7 @@ $privacy=__('<h2>Privacy Policy</h2><p>Welcome to [Domain] (the "Site").We under
 	<h1>WP Legal Pages</h1>
 	<div style="line-height: 2.4em;">
 	<a href="https://club.wpeka.com/product/wplegalpages/" target="_blank">
-	<img src="<?php echo WP_PLUGIN_URL.'/WP-Legal-Pages/image.jpg'; ?>">
+	<img alt="Upgrade to Pro" src="<?php echo WP_PLUGIN_URL.'/wp-legal-pages/admin/images/upgrade-to-pro.jpg'; ?>">
 	</a>
 	</div>
 </div>

@@ -1,9 +1,8 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
-
-$lpObj = new legalPages();
-$lpObj->lp_enqueue_editor();
 $baseurl = $_SERVER['PHP_SELF'];
 
 if(isset($_POST['lp_submit']) && $_POST['lp_submit']=='Accept'){
@@ -13,7 +12,7 @@ if(isset($_POST['lp_submit']) && $_POST['lp_submit']=='Accept'){
 <div style="width:1000px;float:left;">
 	<div style="line-height: 2.4em;">
 	<a href="https://club.wpeka.com/product/wplegalpages/" target="_blank">
-	<img src="<?php echo WP_PLUGIN_URL.'/WP-Legal-Pages/image.jpg'; ?>">
+            <img alt="Upgrade to Pro" src="<?php echo WP_PLUGIN_URL.'/wp-legal-pages/admin/images/upgrade-to-pro.jpg'; ?>">
 	</a>
 	</div>
 	<h1>WP Legal Pages</h1>
@@ -122,7 +121,7 @@ update_option('lp_general',$lp_general);
     </td>
     </tr></table>
 </div>
-	<a href="<?php echo esc_url($baseurl);?>?page=lp-create"><h3 class="hndle"  style="cursor:pointer; padding:7px 10px; font-size:20px;">Click Here to Create Legal Pages &raquo;</h3></a>
+	<a href="<?php echo esc_url($baseurl);?>?page=lp-create-page"><h3 class="hndle"  style="cursor:pointer; padding:7px 10px; font-size:20px;">Click Here to Create Legal Pages &raquo;</h3></a>
 <?php }else{
 	?>
     <h2 class="hndle myLabel-head">DISCLAIMER</h2>
