@@ -20,6 +20,7 @@
  * @subpackage WP_Legal_Pages/includes
  * @author     WPEka <support@wplegalpages.com>
  */
+if (!class_exists('WP_Legal_Pages_Activator')){
 class WP_Legal_Pages_Activator {
 
 	/**
@@ -44,10 +45,12 @@ class WP_Legal_Pages_Activator {
             $message_body="This website has updated its privacy policy in compliance with EU Cookie legislation. Please read this to review the updates about which cookies we use and what information we collect on our site. By continuing to use this site, you are agreeing to our updated privacy policy.";
             add_option('lp_eu_cookie_message',htmlentities($message_body));
             add_option('lp_eu_cookie_enable','OFF');
-            add_option('lp_eu_box_color','#DCDCDC');
-            add_option('lp_eu_button_color','#24890d');
+            add_option('lp_eu_box_color', '#000000'); 
+ 	        add_option('lp_eu_button_color', '#e3e3e3');
             add_option('lp_eu_button_text_color','#333333');
-            add_option('lp_eu_text_color','#333333');
+            add_option('lp_eu_text_color', '#FFFFFF'); 
+            add_option('lp_eu_link_color', '#8f0410'); 
+ 	      add_option('lp_eu_text_size', '12'); 
 
             $sql = "CREATE TABLE IF NOT EXISTS `$legal_pages->tablename` (
                               `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -76,7 +79,8 @@ class WP_Legal_Pages_Activator {
                     $wpdb->insert($legal_pages->tablename,array('title'=>'DMCA','content'=>$dmca,'contentfor'=>'10j'),array('%s','%s','%s'));
             }
 
-
 	}
+	}
+
 
 }

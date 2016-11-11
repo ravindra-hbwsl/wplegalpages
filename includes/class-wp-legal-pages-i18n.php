@@ -24,6 +24,7 @@
  * @subpackage WP_Legal_Pages/includes
  * @author     WPEka <support@wplegalpages.com>
  */
+if(!class_exists('WP_Legal_Pages_i18n')){
 class WP_Legal_Pages_i18n {
 
 
@@ -32,6 +33,7 @@ class WP_Legal_Pages_i18n {
 	 *
 	 * @since    1.0.0
 	 */
+
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
@@ -44,4 +46,5 @@ class WP_Legal_Pages_i18n {
 
 
 
+}
 }

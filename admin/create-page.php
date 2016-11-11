@@ -2,7 +2,6 @@
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
-
 $lpObj = new WP_Legal_Pages();
 //$lpObj->lp_enqueue_editor();
 $baseurl=esc_url(get_bloginfo('url'));
@@ -83,13 +82,16 @@ wp_editor(stripslashes(html_entity_decode($content)),$id = 'content',$args);
 ?>
                 </div>
                     <script type="text/javascript">
-
+			
                     function sp_content_save(){
                         var obj = document.getElementById('lp-content');
+                        
                         var content = document.getElementById('content');
+                        console.log(content);
                         tinyMCE.triggerSave(0,1);
                         obj.value = content.value;
                     }
+			
 
                     </script>
                     <textarea id="lp-content" name="lp-content" value="5" style="display:none" rows="10"></textarea>
@@ -116,7 +118,7 @@ wp_editor(stripslashes(html_entity_decode($content)),$id = 'content',$args);
     </div>
 
 		<a href="https://wplegalpages.dpdcart.com/cart/buy?product_id=117719&product_price_id=137261&gateway=paypal" style="text-decoration:none;padding-left:20px;" target="_blank">
-		Upgrate to Pro for All templates
+		Upgrade to Pro for All templates
 		</a>
 
 		<div id="lp_generalid_right" class="postbox ">
