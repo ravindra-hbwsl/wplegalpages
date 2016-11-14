@@ -39,7 +39,6 @@ function deactivate_wp_legal_pages() {
 }
 if(!function_exists('delete_wp_legal_pages')){
 function delete_wp_legal_pages() {
-	error_log("Delete");
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wp-legal-pages-delete.php';
 	WP_Legal_Pages_Delete::delete();
 }
@@ -68,8 +67,6 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-wp-legal-pages.php';
 
 if(!function_exists('run_wp_legal_pages')){
 function run_wp_legal_pages() {
-//error_log("Checking run");
-	
 	$legal_pages = new WP_Legal_Pages();
 	$legal_pages->run();
 

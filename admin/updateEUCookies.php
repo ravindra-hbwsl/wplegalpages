@@ -1,5 +1,4 @@
 <?php
-error_log("In File");
 if ( ! defined( 'ABSPATH' ) ) exit;
 require_once( 'class-wp-legal-pages-admin.php' );
 global $wpdb;
@@ -74,8 +73,8 @@ wp_enqueue_script('jquery-validation-plugin', $this->plugin_url.'/wp-content/plu
                                             change: function (hex, rgb) {}
                                         });
 
-                                    // Form validation        
-                                    jQuery("#lp_eu_cookies_form").validate();    
+                                    // Form validation
+                                    jQuery("#lp_eu_cookies_form").validate();
                                     });
 
 									function sp_content_save() {

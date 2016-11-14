@@ -38,9 +38,9 @@ class WP_Legal_Pages {
 	 * @access   protected
 	 * @var      WP_Legal_Pages_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
-	
+
 	protected $loader;
-	
+
 	/**
 	 * The unique identifier of WP Legal Pages.
 	 *
@@ -56,9 +56,9 @@ class WP_Legal_Pages {
 	 * @since    1.5.2
 	 * @access   protected
 	 * @var      string    $version    The current version of the WP Legal Pages.
-         * 
+         *
 	 */
-        
+
 	protected $version;
 
 	/**
@@ -71,13 +71,13 @@ class WP_Legal_Pages {
 	 * @since    1.5.2
 	 */
 	public function __construct() {
-            
+
                 global $table_prefix;
 				$this->plugin_name = 'wp-legal-pages';
 				$this->version = '1.5.2';
                 $this->tablename = $table_prefix . "legal_pages";
                 $this->popuptable = $table_prefix . "lp_popups";
-                
+
 		$this->load_dependencies();
 		$this->set_locale();
 		if(is_admin()){
@@ -103,7 +103,7 @@ class WP_Legal_Pages {
 	 * @since    1.5.2
 	 * @access   private
 	 */
-	
+
 	private function load_dependencies() {
 
 		/**
@@ -132,7 +132,7 @@ class WP_Legal_Pages {
 		$this->loader = new WP_Legal_Pages_Loader();
 
 	}
-	
+
 	/**
 	 * Define the locale for this WP_Legal_Pages for internationalization.
 	 *
@@ -158,12 +158,12 @@ class WP_Legal_Pages {
 	 */
 	private function define_admin_hooks() {
 
-                $plugin_admin = new WP_Legal_Pages_Admin( $this->get_plugin_name(), $this->get_version() ); 
+                $plugin_admin = new WP_Legal_Pages_Admin( $this->get_plugin_name(), $this->get_version() );
                 $this->loader->add_action( 'admin_menu', $plugin_admin, 'admin_menu' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
-                                
-	}                
-        
+
+	}
+
 	/**
 	 * Register all of the hooks related to the public-facing functionality
 	 * of the WP_Legal_Pages.
@@ -173,14 +173,14 @@ class WP_Legal_Pages {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new WP_Legal_Pages_Public( $this->get_plugin_name(), $this->get_version() );                
-                        
+		$plugin_public = new WP_Legal_Pages_Public( $this->get_plugin_name(), $this->get_version() );
+
 		$this->loader->add_filter( 'the_content', $plugin_public, 'lpShortcode' );
 		//$this->loader->add_filter( 'the_content', $plugin_public, 'wplegal_post_generate' );
-		
+
 		$this->loader->add_filter( 'the_excerpt', $plugin_public, 'lpShortcode' );
 		add_action('wp_enqueue_scripts', array($this,'enqueue_frontend_script'));
-		
+
 	   add_action('wp_footer', array($this,'wp_legalpages_show_eu_cookie_message'));
 
 	}
@@ -226,19 +226,19 @@ class WP_Legal_Pages {
 		return $this->version;
 	}
 
-	
+
 	function enqueue_frontend_script()
 	{
 		wp_enqueue_script('jquery-cookie',  $this->plugin_url. '/wp-content/plugins/wp-legal-pages/admin/js/jquery.cookie.js', array('jquery'));
-		 
+
 	}
 	function wp_legalpages_show_eu_cookie_message()
 	{
-	
+
 	$lp_eu_get_visibility=get_option('lp_eu_cookie_enable');
-	
+
 	if($lp_eu_get_visibility=='ON') {
-	
+
 		$lp_eu_theme_css		= get_option('lp_eu_theme_css');
 		$lp_eu_title			= get_option('lp_eu_cookie_title');
 		$lp_eu_message			= get_option('lp_eu_cookie_message');
@@ -252,20 +252,19 @@ class WP_Legal_Pages {
 		$lp_eu_text_size		= get_option('lp_eu_text_size');
 		$lp_eu_link_color		= get_option('lp_eu_link_color');
 		$lp_eu_head_text_size 	= $lp_eu_text_size + 4;
-	
+
 		$lp_eu_html='<div id="lp_eu_container">';
 		$lp_eu_html.='<table id="lp_eu_table" class="lp_eu_table" style="border:none;"><tr><td width="90%">';
-	
+
 		if(!empty($lp_eu_title)){
 			$lp_eu_html.='<b id="lp_eu_title">'.$lp_eu_title.'</b>';
 		}
-	
+
 		$lp_eu_html.='<p id="lp_eu_body">'.stripslashes(html_entity_decode($lp_eu_message));
-	
+
 		$lp_eu_html.=' <a id="lp_eu_link" target="_blank" href="'.$lp_eu_link_url.'">'.$lp_eu_link_text.'</a></p></td>';
 		$lp_eu_html.='<td width="10%"><p id="lp_eu_btnContainer"><button type="button" id="lp_eu_btn_agree">'.$lp_eu_button_text.'</button></p></td></tr></table>';
 		$lp_eu_html.='</div>';
-		error_log("hello");
 		echo '<style>
 					.lp_eu_table td{
 						border:none;
@@ -295,7 +294,7 @@ class WP_Legal_Pages {
 						box-sizing : border-box;
 						opacity: 0.8;
 					}
-	
+
 					#lp_eu_btnContainer{
 					text-align: center;
 					}
@@ -318,7 +317,7 @@ class WP_Legal_Pages {
 						}
  					}
 				</style>';
-	
+
 		?>
 	                        <script type="text/javascript">
 	                        jQuery(document).ready(function(){
@@ -337,18 +336,18 @@ class WP_Legal_Pages {
 	                        function lp_eu_show_cookie_bar(){
 	        									jQuery('body').prepend('<?php echo $lp_eu_html; ?>');
 	        	                    <?php if($lp_eu_theme_css == 0){ ?>
-	        
+
 	        	        			  		 // container deisgn
 	        	   			                 jQuery('#lp_eu_container').css( { 'background-color' : '<?php echo $lp_eu_box_color; ?>',
 	        	   			                 								   'border-color'	  :	'<?php echo $lp_eu_text_color; ?>',
 	        	   			                 								   'color'            : '<?php echo $lp_eu_text_color; ?>' });
-	        
+
 	        	 							 //Text font
 	        	   			              	 jQuery('p#lp_eu_body').css('font-size', '<?php echo $lp_eu_text_size."px"; ?>');
-	        
+
 	        	   			             	 // Title design
 	        	   							 jQuery('#lp_eu_title').css('font-size','<?php echo $lp_eu_head_text_size."px"; ?>');
-	        
+
 	        	   			                 // agree button design
 	        	   			                 jQuery('#lp_eu_btn_agree').css( { 'background-color' : '<?php echo $lp_eu_button_color; ?>',
 	        	   			                 								   'color'            : '<?php echo $lp_eu_button_text_color; ?>',
@@ -363,17 +362,17 @@ class WP_Legal_Pages {
 	        										   						   'cursor'			  : 'pointer',
 	        										   						   'font-size'		  : '<?php echo $lp_eu_text_size."px"; ?>'
 	        	   			                 								});
-	        
+
 	        	   			           		// link color
 	        	                     	  	jQuery('#lp_eu_link').css({ 'color' : '<?php echo $lp_eu_link_color; ?>' });
-	        
+
 	        	                    <?php }
 	        	                    	  else {
 	        	                    	  	// container deisgn
 	        	                    	  	?>
 	        	                    	  	jQuery('#lp_eu_container').css({ 'background-color' : '<?php echo "inherit"; ?>',
 	        	                        	  								 'color'            : '<?php echo "inherit"; ?>' });
-	        
+
 	        	                   <?php  }
 	        	                    ?>
 	        	                    jQuery('#lp_eu_container').show(500);
@@ -382,6 +381,6 @@ class WP_Legal_Pages {
 	                        <?php
 	                    }
 	                }
-	        
+
 }
 }

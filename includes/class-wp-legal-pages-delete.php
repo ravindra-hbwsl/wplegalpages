@@ -33,12 +33,11 @@ class WP_Legal_Pages_Delete {
 	public static function delete() {
 		global $wpdb;
 		$legal_pages = new WP_Legal_Pages();
-		error_log("In Delete Method");
             delete_option('lp_accept_terms');
             delete_option('lp_excludePage');
             delete_option('lp_general');
             delete_option('lp_accept_terms');
-            delete_option('lp_eu_cookie_title');        
+            delete_option('lp_eu_cookie_title');
             delete_option('lp_eu_cookie_message');
             delete_option('lp_eu_cookie_enable');
             delete_option('lp_eu_box_color');
@@ -49,7 +48,7 @@ class WP_Legal_Pages_Delete {
 	$sql_popup = "DROP TABLE $legal_pages->popuptable";
 	$wpdb->query($sql);
 	$wpdb->query($sql_popup);
-	error_log("After Delete");
+
 	}
 
 }

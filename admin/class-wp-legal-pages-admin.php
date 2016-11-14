@@ -63,7 +63,7 @@ class WP_Legal_Pages_Admin {
 
 	public function enqueue_styles() {
 		wp_enqueue_style( $this->plugin_name."-admin", plugin_dir_url( __FILE__ ) . 'css/wp-legal-pages-admin.css', array(), $this->version, 'all' );
-                wp_enqueue_style( $this->plugin_name."-bootstrap", plugin_dir_url( __FILE__ ) . 'css/bootstrap.min.css', array(), $this->version, 'all' );                
+                wp_enqueue_style( $this->plugin_name."-bootstrap", plugin_dir_url( __FILE__ ) . 'css/bootstrap.min.css', array(), $this->version, 'all' );
 
 	}
 
@@ -89,7 +89,7 @@ class WP_Legal_Pages_Admin {
 	//wp_enqueue_script( $this->plugin_name."-wplegalpages-admin.js", plugin_dir_url( __FILE__ ) . 'js/wplegalpages-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
-        
+
        /**
         * This function is provided for wordpress dashbord menus.
         *
@@ -102,7 +102,7 @@ class WP_Legal_Pages_Admin {
         * class.
         */
 	public function admin_menu() {
-            
+
 		add_menu_page(__('Legal Pages','legal-pages'), 'Legal Pages', 'manage_options', 'legal-pages', array($this, 'admin_setting'));
                 $terms = get_option('lp_accept_terms');
                 if($terms == 1){
@@ -112,28 +112,28 @@ class WP_Legal_Pages_Admin {
                         add_submenu_page(__('legal-pages','legal-pages'), 'EU Cookies', 'EU Cookies', 'manage_options', 'lp-eu-cookies', array($this, 'update_eu_cookies'));
                 }
 
-	} 
-        
+	}
+
         /**
         * This Callback function for Admin Setting menu for WP Legal pages.
         *
         */
         function admin_setting()
-        {            
-            include_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/admin-settings.php';   
+        {
+            include_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/admin-settings.php';
         }
-        
- 
+
+
         /**
         * This Callback function for Create Page menu for WP Legal pages.
         *
         */
-        
+
         function create_page()
         {
-             include_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/create-page.php';   
+             include_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/create-page.php';
         }
-        
+
         /**
          * This Callback function for Show Page menu for WP Legal pages.
          *
@@ -141,7 +141,7 @@ class WP_Legal_Pages_Admin {
 
         function show_pages()
         {
-            include_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/show-pages.php';   
+            include_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/show-pages.php';
         }
         /**
          * This Callback function for EU_Cookies Page menu for WP Legal pages.
@@ -149,7 +149,6 @@ class WP_Legal_Pages_Admin {
          */
         function update_eu_cookies()
             {
-            	echo "In update";
         	      include_once "updateEUCookies.php";
         	 }
 
