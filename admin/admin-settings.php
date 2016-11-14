@@ -21,11 +21,14 @@ if(isset($_POST['lp_submit']) && $_POST['lp_submit']=='Accept'){
 </div>	<div style="clear:both;"></div>
 <?php
 wp_enqueue_script('jquery');
+
 $lpterms = get_option('lp_accept_terms');
+
 if($lpterms==1){?>
 <div class="wrap">
 <?php
 if(!empty($_POST) && isset($_POST['lp-greset']) && $_POST['lp-greset']=='Reset') :
+
 $lp_general = array(
 				'domain' => '',
 				'business' => '',
@@ -37,8 +40,11 @@ $lp_general = array(
 				'address' => '',
 				'niche' => '',
 				'pagefooter' => '',
+				'generate'=>''
 				);
+
 update_option('lp_general',$lp_general);
+
 ?>
 	<div id="message">
     	<p><span class="label label-success myAlert">Settings Reset.</span></p>
@@ -46,6 +52,7 @@ update_option('lp_general',$lp_general);
 <?php
 	  endif;
 	  if(!empty($_POST) && isset($_POST['lp-gsubmit']) && $_POST['lp-gsubmit']=='Save') :
+
 
 $lp_general = array(
 				'domain' => sanitize_text_field(esc_attr($_POST['lp-domain-name'])),
@@ -59,6 +66,11 @@ $lp_general = array(
 				'niche' => sanitize_text_field(esc_attr($_POST['lp-niche'])),
 
 				);
+					if(isset($_POST['lp-generate'])) {
+                    $lp_general['generate']=sanitize_text_field(esc_attr($_POST['lp-generate']));
+	                } else {
+		               $lp_general['generate']=0;
+		                }
 update_option('lp_general',$lp_general);
 ?>
 	<div id="message">
@@ -70,7 +82,7 @@ update_option('lp_general',$lp_general);
 	  $checked = 'checked="checked"'; $selected = 'selected="selected"';
 	  $lp_general = get_option('lp_general');
 ?>
-<?php global $wpgattack;?>
+<?php if(!isset($wpgattack)){global $wpgattack;}?>
 <div class="postbox ">
 
 	<h3 class="hndle myLabel-head"  style="cursor:pointer; padding:7px 10px; font-size:20px;"> General Settings </h3>
@@ -108,9 +120,16 @@ update_option('lp_general',$lp_general);
             	<td><b>Address:</b></td><td><input type="text" size="30" name="lp-address" value="<?php echo !empty($lp_general['address'])?stripslashes($lp_general['address']):'';?>" /></td><td>[Address]</td>
             </tr>
             <tr>
-            	<td><b>Niche:</b></td><td><input type="text" size="30" name="lp-niche" value="<?php echo !empty($lp_general['niche'])? stripslashes($lp_general['niche']):'';?>" /></td><td>[Niche]</td>
+             <td><b>Niche:</b></td> <td><input type="text" size="30" name="lp-niche" value="<?php echo !empty($lp_general['niche'])? stripslashes($lp_general['niche']):'';?>" /></td> <td>[Niche]</td> 
             </tr>
-
+            <tr> 
+ 	          <td> <b> Give Credit : </b> </td> 
+ 		                                <td><label class="switch"><input type="checkbox" <?php echo (isset($lp_general[ 'generate']) && $lp_general[ 'generate']=='1' )? 'checked="checked"': '' ?> name="lp-generate" value="1" > 
+ 		                                 <div class="slider round"></div> 
+ 		                                </label> 
+ 		                          </td> 
+                        
+     </tr> 
                <tr align="center">
  <td colspan="3"><input type="submit" name="lp-gsubmit" class="btn btn-primary" value="Save" /> <input type="submit" class="btn btn-primary" name="lp-greset" value="Reset" /></td>
                </tr>

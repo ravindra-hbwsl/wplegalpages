@@ -21,6 +21,7 @@
  * @subpackage WP_Legal_Pages/includes
  * @author     WPEka <support@wplegalpages.com>
  */
+if(!class_exists('WP_Legal_Pages_Loader')){
 class WP_Legal_Pages_Loader {
 
 	/**
@@ -30,6 +31,7 @@ class WP_Legal_Pages_Loader {
 	 * @access   protected
 	 * @var      array    $actions    The actions registered with WordPress to fire when the WP Legal Pages loads.
 	 */
+
 	protected $actions;
 
 	/**
@@ -125,4 +127,5 @@ class WP_Legal_Pages_Loader {
 
 	}
 
+}
 }

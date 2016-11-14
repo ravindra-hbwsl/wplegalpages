@@ -20,6 +20,7 @@
  * @subpackage WP_Legal_Pages/includes
  * @author     WPEka <support@wplegalpages.com>
  */
+if(!class_exists('WP_Legal_Pages_Deactivator')){
 class WP_Legal_Pages_Deactivator {
 
 	/**
@@ -33,4 +34,5 @@ class WP_Legal_Pages_Deactivator {
             delete_option('lp_accept_terms');
 	}
 
+}
 }
