@@ -77,14 +77,14 @@ class WP_Legal_Pages {
 				$this->version = '1.5.2';
                 $this->tablename = $table_prefix . "legal_pages";
                 $this->popuptable = $table_prefix . "lp_popups";
-
+$this->plugin_url	= plugin_dir_path( dirname( __FILE__ ) );
 		$this->load_dependencies();
 		$this->set_locale();
 		if(is_admin()){
 		$this->define_admin_hooks();
+
 		}
 		$this->define_public_hooks();
-
 	}
 
 	/**
@@ -229,8 +229,7 @@ class WP_Legal_Pages {
 
 	function enqueue_frontend_script()
 	{
-		wp_enqueue_script('jquery-cookie',  $this->plugin_url. '/wp-content/plugins/wp-legal-pages/admin/js/jquery.cookie.js', array('jquery'));
-
+		wp_enqueue_script('jquery-cookie',  $this->plugin_url. '/wp-content/plugins/wplegalpages/admin/js/jquery.cookie.js', array('jquery'));
 	}
 	function wp_legalpages_show_eu_cookie_message()
 	{

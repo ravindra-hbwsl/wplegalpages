@@ -31,7 +31,7 @@ if( (isset($_REQUEST['mode']) && $_REQUEST['mode']=='delete' && current_user_can
 <h1>WP Legal Pages</h1>
 <div style="line-height: 2.4em;">
 <a href="https://club.wpeka.com/product/wplegalpages/" target="_blank">
-<img alt="Upgrade to Pro" src="<?php echo WP_PLUGIN_URL.'/wp-legal-pages/admin/images/upgrade-to-pro.jpg'; ?>">
+<img alt="Upgrade to Pro" src="<?php echo WP_PLUGIN_URL.'/wplegalpages/admin/images/upgrade-to-pro.jpg'; ?>">
 </a>
 </div>
 

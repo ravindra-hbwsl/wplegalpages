@@ -3,10 +3,10 @@ Contributors: pallavi.chanodia, sandyr, WPEka Club
 Donate link:https://club.wpeka.com/product/wplegalpages
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: Legal Pages, Business Law, law,lawyer, legal, Digital Millennium Copyright Act, DMCA, disclaimer, Google, Linking policy, External links policy, Terms and conditions, Refund policy, Affiliate disclosure, Privacy Policy, Affiliate agreement, FB privacy policy, Earnings Disclaimer, Antispam template, Double dart cookie, Disclaimer, FTC statement, Medical disclaimer, Testimonials disclosure, Amazon affiliate, Legal Template, About us, Terms of use, EU cookies, COPPA policy 
+Tags: Legal Pages, Business Law, law,lawyer, legal, Digital Millennium Copyright Act, DMCA, disclaimer, Google, Linking policy, External links policy, Terms and conditions, Refund policy, Affiliate disclosure, Privacy Policy, Affiliate agreement, FB privacy policy, Earnings Disclaimer, Antispam template, Double dart cookie, Disclaimer, FTC statement, Medical disclaimer, Testimonials disclosure, Amazon affiliate, Legal Template, About us, Terms of use, EU cookies, COPPA policy
 Requires at least: 3.1+
 Tested up to: 4.6.1
-Stable tag: trunk
+Stable tag: 1.5.5
 
 WP Legal Pages is a simple 1 click legal page management plugin. You can quickly add in legal pages to your WordPress sites.
 
@@ -105,6 +105,12 @@ Yes. The templates are created in accordance with the US website laws and by con
 This plugin does not support multisite network. You will have to install it on each site separately.
 
 == Upgrade Notice ==
+= 1.5.5 =
+  Rewrite Plugin
+
+= 1.5.4 =
+  Added EU Cookies Policy
+
 = 1.5.2 =
 Compatible with PHP 7.0.
 

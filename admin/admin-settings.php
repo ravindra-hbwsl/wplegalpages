@@ -12,7 +12,7 @@ if(isset($_POST['lp_submit']) && $_POST['lp_submit']=='Accept'){
 <div style="width:1000px;float:left;">
 	<div style="line-height: 2.4em;">
 	<a href="https://club.wpeka.com/product/wplegalpages/" target="_blank">
-            <img alt="Upgrade to Pro" src="<?php echo WP_PLUGIN_URL.'/wp-legal-pages/admin/images/upgrade-to-pro.jpg'; ?>">
+            <img alt="Upgrade to Pro" src="<?php echo WP_PLUGIN_URL.'/wplegalpages/admin/images/upgrade-to-pro.jpg'; ?>">
 	</a>
 	</div>
 	<h1>WP Legal Pages</h1>
@@ -120,16 +120,16 @@ update_option('lp_general',$lp_general);
             	<td><b>Address:</b></td><td><input type="text" size="30" name="lp-address" value="<?php echo !empty($lp_general['address'])?stripslashes($lp_general['address']):'';?>" /></td><td>[Address]</td>
             </tr>
             <tr>
-             <td><b>Niche:</b></td> <td><input type="text" size="30" name="lp-niche" value="<?php echo !empty($lp_general['niche'])? stripslashes($lp_general['niche']):'';?>" /></td> <td>[Niche]</td> 
+             <td><b>Niche:</b></td> <td><input type="text" size="30" name="lp-niche" value="<?php echo !empty($lp_general['niche'])? stripslashes($lp_general['niche']):'';?>" /></td> <td>[Niche]</td>
             </tr>
-            <tr> 
- 	          <td> <b> Give Credit : </b> </td> 
- 		                                <td><label class="switch"><input type="checkbox" <?php echo (isset($lp_general[ 'generate']) && $lp_general[ 'generate']=='1' )? 'checked="checked"': '' ?> name="lp-generate" value="1" > 
- 		                                 <div class="slider round"></div> 
- 		                                </label> 
- 		                          </td> 
-                        
-     </tr> 
+            <tr>
+ 	          <td> <b> Give Credit : </b> </td>
+ 		                                <td><label class="switch"><input type="checkbox" <?php echo (isset($lp_general[ 'generate']) && $lp_general[ 'generate']=='1' )? 'checked="checked"': '' ?> name="lp-generate" value="1" >
+ 		                                 <div class="slider round"></div>
+ 		                                </label>
+ 		                          </td>
+
+     </tr>
                <tr align="center">
  <td colspan="3"><input type="submit" name="lp-gsubmit" class="btn btn-primary" value="Save" /> <input type="submit" class="btn btn-primary" name="lp-greset" value="Reset" /></td>
                </tr>
