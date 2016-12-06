@@ -3,10 +3,10 @@ Contributors: pallavi.chanodia, sandyr, WPEka Club
 Donate link:https://club.wpeka.com/product/wplegalpages
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: Legal Pages, Business Law, law,lawyer, legal, Digital Millennium Copyright Act, DMCA, disclaimer, Google, Linking policy, External links policy, Terms and conditions, Refund policy, Affiliate disclosure, Privacy Policy, Affiliate agreement, FB privacy policy, Earnings Disclaimer, Antispam template, Double dart cookie, Disclaimer, FTC statement, Medical disclaimer, Testimonials disclosure, Amazon affiliate, Legal Template, About us, Terms of use, EU cookies, COPPA policy 
+Tags: Legal Pages, Business Law, law,lawyer, legal, Digital Millennium Copyright Act, DMCA, disclaimer, Google, Linking policy, External links policy, Terms and conditions, Refund policy, Affiliate disclosure, Privacy Policy, Affiliate agreement, FB privacy policy, Earnings Disclaimer, Antispam template, Double dart cookie, Disclaimer, FTC statement, Medical disclaimer, Testimonials disclosure, Amazon affiliate, Legal Template, About us, Terms of use, EU cookies, COPPA policy
 Requires at least: 3.1+
 Tested up to: 4.6.1
-Stable tag: trunk
+Stable tag: 1.5.5
 
 WP Legal Pages is a simple 1 click legal page management plugin. You can quickly add in legal pages to your WordPress sites.
 
@@ -19,14 +19,17 @@ Pages included:
 <ul>
 <li>Privacy Policy</li>
 <li>DMCA Policy</li>
+<li>EU Cookie Policy</li>
 </ul>
-We have a <a href="https://club.wpeka.com/product/wplegalpages/">PRO version</a> of this plugin. It includes 18 legal page templates required by different sites.
+We have a <a href="https://club.wpeka.com/product/wplegalpages/">PRO version</a> of this plugin. It includes 22 legal page templates required by different sites.
 
 
-<h4>List of all the 19 templates included with PRO version : </h4>
+<h4>List of all the 22 templates included with PRO version : </h4>
 
 <ol>
   <li>California Privacy Rights <strong>(NEW)!!</strong></li>
+	<li>Digital Goods Refund Policy template <strong>(NEW)!!</strong></li>
+	<li>COPPA - Children's Online Privacy Policy template <strong>(NEW)!!</strong></li>
  	<li>Terms of use <strong>(forced agreement - don't allow your users to proceed without agreeing to your terms)</strong></li>
  	<li>Linking policy template</li>
  	<li>External links policy template</li>
@@ -44,7 +47,8 @@ We have a <a href="https://club.wpeka.com/product/wplegalpages/">PRO version</a>
  	<li>Medical disclaimer template</li>
  	<li>Testimonials disclosure template</li>
  	<li>Amazon affiliate template</li>
- 	<li>DMCA policy</li>
+ 	<li>DMCA policy template</li>
+  <li>Cookie policy template</li>
 </ol>
 
 <h3>Features included: </h3>
@@ -68,11 +72,11 @@ For advanced usage of creating unlimited templates, advanced flexibility, ready 
 Few of the Key Features: 1. Pre-built Legal Templates 2. Easy To Edit Pages 3. Powerful & Simple WP Plugin
 
 = Features of WP Legal Pages Pro =
-1. Total number of 19 templates are available
+1. Total number of 22 templates are available
 2. Supports widget
 3. <a href="https://club.wpeka.com/product/wplegalpages/">WP Legal Pages Pro </a> is also available as part of <a href="https://club.wpeka.com/">WPEKa WordPress Plugin Club</a>
 
-[youtube https://www.youtube.com/watch?v=xmbyFmEQCNc]
+[youtube https://www.youtube.com/watch?v=iqdLl9qsBHc]
 
 * [Upgrade Today](https://club.wpeka.com/product/wplegalpages/)
 
@@ -105,6 +109,15 @@ Yes. The templates are created in accordance with the US website laws and by con
 This plugin does not support multisite network. You will have to install it on each site separately.
 
 == Upgrade Notice ==
+= 1.5.5 =
+Rewrite Plugin.
+
+= 1.5.4 =
+Added EU Cookies Policy.
+
+= 1.5.3 =
+Added Give Credit option.
+
 = 1.5.2 =
 Compatible with PHP 7.0.
 
