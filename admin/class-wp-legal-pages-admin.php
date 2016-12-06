@@ -61,10 +61,12 @@ class WP_Legal_Pages_Admin {
 	 */
 
 	public function enqueue_styles() {
+		if( (isset( $_GET['page'] )) && (($_GET['page'] == 'legal-pages')||($_GET['page'] == 'lp-show-pages')||($_GET['page'] == 'lp-create-page')||($_GET['page'] == 'lp-eu-cookies'))){
 		wp_enqueue_style( $this->plugin_name."-admin", plugin_dir_url( __FILE__ ) . 'css/wp-legal-pages-admin.css', array(), $this->version, 'all' );
                 wp_enqueue_style( $this->plugin_name."-bootstrap", plugin_dir_url( __FILE__ ) . 'css/bootstrap.min.css', array(), $this->version, 'all' );
 
 	}
+}
 
 	/**
 	 * Register the JavaScript for the admin area.
@@ -84,9 +86,10 @@ class WP_Legal_Pages_Admin {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
+		 	if( (isset( $_GET['page'] )) && (($_GET['page'] == 'legal-pages')||($_GET['page'] == 'lp-show-pages')||($_GET['page'] == 'lp-create-page')||($_GET['page'] == 'lp-eu-cookies'))){
 		wp_enqueue_script('tooltip-js', $this->plugin_url. '/wp-content/plugins/wplegalpages/admin/js/tooltip.js');
 	//wp_enqueue_script( $this->plugin_name."-wplegalpages-admin.js", plugin_dir_url( __FILE__ ) . 'js/wplegalpages-admin.js', array( 'jquery' ), $this->version, false );
-
+}
 	}
 
        /**
